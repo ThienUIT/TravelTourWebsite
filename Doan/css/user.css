@@ -1,0 +1,29 @@
+#ca
+{
+   width: 100%;
+    align-content: center;
+    margin-top: 50px;
+}
+.card{
+    background-image: url(//images/homestay1.jpg);
+}
+#re
+{
+   font-size: small;
+}
+.social a
+{
+    font-size: 2em;
+
+}
+.fa-facebook{
+    color: #3b5998;
+}
+.fa-google
+{
+    color:#db3236 	;
+}
+.fa-apple
+{
+    color: #000000;
+}

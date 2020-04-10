@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Booking Tour</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet prefetch"
+        href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css">
+    <!--fontawesome-->
+    <script src="https://kit.fontawesome.com/d6db45430d.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top ">
+        <div class="container">
+            <a class="navbar-branch" href="#">
+                <img src="/images/logo-removebg-preview.png" alt="logoBookingTour" width="125px">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto navbartop">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">
+                            VNĐ
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <img class="item" src="images/flagVN.png" alt="Vietnam">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html">
+                            <button class="item" type="button" class="btn btn-light">
+                                <span>Đăng ký</span>
+                            </button>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">
+                            <button class="item" type="button" class="btn btn-light"><span>Đăng nhập</span></button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    </br>
+
+    <!--Search -->
+    <div class="container">
+        <div id="Jumbotron" class="jumbotron ">
+            <h3>Tìm kiếm ưu đãi khách sạn, chỗ nghỉ dạng nhà ở và nhiều hơn nữa... </h3>
+            <p>Từ những khu nghỉ dưỡng thanh bình đến những căn hộ hạng sang hiện đại</p>
+            <form class="form-inline" action="/action_page.php">
+                <div class="form-row">
+                    <div class="col">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fas fa-hotel"></i>
+                                </span>
+                            </div>
+                            <input id="place" type="text" class="form-control" id="place"
+                                placeholder="Bạn muốn đến đâu?" name="place" required>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col">
+                        <div id="datepicker" class="input-group mb-3 input-group-sm date" data-date-format="dd-mm-yyyy">
+                            <div class="input-group-prepend">
+                                <span class="input-group-addon input-group-text">
+                                    <i class="fas fa-calendar glyphicon glyphicon-calendar">
+                                    </i>
+                                </span>
+                                <input id="calendar" class="form-control primary" readonly="" type="text">
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="input-group mb-3 input-group">
+                            <a data-toggle="collapse" href="#collapseOne">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fas fa-user"></i></span>
+                                    <input readonly="" type="text" class="form-control" id="person"
+                                        placeholder="Số người - Phòng" name="person">
+                                </div>
+                            </a>
+                            <div id="collapseOne" class="collapse hide" data-parrent="#accord">
+                                <div class="card bg-light text-dark " style="width: 15rem;">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col"> <label>Số người</label> </div>
+                                            <div class="col-mb-4">
+                                                <button type="button" class="btn btn-primary">-</button>
+                                                <span>0</span>
+                                                <button type="button" class="btn btn-primary">+</button>
+                                            </div>
+                                        </div>
+                                        </br>
+                                        <div class="row">
+                                            <div class="col"> <label>Số phòng</label> </div>
+                                            <div class="col-mb-4">
+                                                <button type="button" class="btn btn-primary">-</button>
+                                                <span>0</span>
+                                                <button type="button" class="btn btn-primary">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-primary" type="button">Tìm</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!--carousel-->
+    <div class="container">
+        <h2>
+            Tìm theo loại chỗ nghỉ
+        </h2>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="imghome d-block w-100" src="images/bighouse.jpg" alt="Biệt thự">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Biệt thự</h2>
+                        <p>Chỗ nghỉ hạng sang, cung cấp dịch vụ tốt nhất cho khách hàng .</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="imghome d-block w-100" src="images/homestay1.jpg" alt="Nhà sang trọng">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2> Nhà sang trọng </h2>
+                        <p>Chỗ nghỉ sang trọng, cung cấp dịch vụ tốt nhất cho khách hàng .</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="imghome d-block w-100" src="images/home-boat.jpg" alt="nhà nghỉ mát">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Nhà nghỉ mát</h2>
+                        <p>Chỗ nghỉ hạng sang, cung cấp dịch vụ tốt nhất cho khách hàng .</p>
+                    </div>
+                </div>
+                <div class="carousel-item ">
+                    <img class="imghome d-block w-100" src="images/home-camp.jpg" alt="lều">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Lều trại hoang dã</h2>
+                        <p>Chỗ nghỉ sạch sẽ, cung cấp dịch vụ tốt nhất cho khách hàng .</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="imghome d-block w-100" src="images/home-farm.jpg" alt="nhà trang trại">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Nhà nghỉ trang trại</h2>
+                        <p>Chỗ nghỉ sạch sẽ, cung cấp dịch vụ tốt nhất cho khách hàng .</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="imghome d-block w-100" src="images/home-lands.jpg" alt="nhà nghỉ">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Chỗ nghỉ bình dân</h2>
+                        <p>Chỗ nghỉ tiện nghi, cung cấp dịch vụ tốt nhất cho khách hàng .</p>
+                    </div>
+                </div>
+            </div>
+
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <hr>
+    <!--card-->
+    <div class="container">
+        <h2>
+            Nhà ở mà khách yêu thích
+        </h2>
+        <div class="form-row">
+            <div class="col">
+                <div class="card" style="width: 15rem; height: 406px;">
+                    <img src="/images/inside.jpg" class="imgcard card-img-top" alt="Nội thất">
+                    <div class="card-body">
+                        <h5 class="card-title">Nội thất xịn xò</h5>
+                        <p class="card-text">Tới đây,được thư giãn với bầu không khí trong lành mà dịu mát cùng với
+                            những bức hình selfie đẹp đẽ.</p>
+                        <a href="#" class="btn btn-primary">Xem thêm</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 15rem;" style="height:110rem">
+                    <img src="images/inside4.jpg" class="imgcard card-img-top" alt="Nội thất">
+                    <div class="card-body">
+                        <h5 class="card-title">View hướng biển</h5>
+                        <p class="card-text">Tận hưởng được mùi gió biển nồng nàn cùng với ánh bình minh rực rỡ vào các
+                            buổi trong ngày.</p>
+                        <a href="#" class="btn btn-primary">Xem thêm</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 15rem; ">
+                    <img src="images/inside5.png" class="imgcard card-img-top" alt="nhà nghỉ">
+                    <div class="card-body">
+                        <h5 class="card-title">View trên không</h5>
+                        <p class="card-text">Nhìn mọi thứ nhỏ bé dưới chân theo góc nhìn của những ngồi nhà cao chót
+                            vót.</p>
+                        <a href="#" class="btn btn-primary">Xem thêm</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 15rem;">
+                    <img src="images/inside2.jpg" class="imgcard card-img-top" alt="Nội thất">
+                    <div class="card-body">
+                        <h5 class="card-title">Không gian rộng</h5>
+                        <p class="card-text">Không gian rộng rãi thoải mái,nội thất sang trọng, nhiều phòng, phù hợp với
+                            đi chơi nhiều người.</p>
+                        <a href="#" class="btn btn-primary">Xem thêm</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--card copy-->
+    <div class="container">
+        <h2>
+            Nhà ở mà khách yêu thích
+        </h2>
+        <div class="form-row">
+            <div class="col">
+                <div class="card" style="width: 15rem; height: 406px;">
+                    <img src="/images/inside.jpg" class="imgcard card-img-top" alt="Nội thất">
+                    <div class="card-body">
+                        <h5 class="card-title">Nội thất xịn xò</h5>
+                        <p class="card-text">Tới đây,được thư giãn với bầu không khí trong lành mà dịu mát cùng với
+                            những bức hình selfie đẹp đẽ.</p>
+                        <a href="#" class="btn btn-primary">Xem thêm</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 15rem;" style="height:110rem">
+                    <img src="images/inside4.jpg" class="imgcard card-img-top" alt="Nội thất">
+                    <div class="card-body">
+                        <h5 class="card-title">View hướng biển</h5>
+                        <p class="card-text">Tận hưởng được mùi gió biển nồng nàn cùng với ánh bình minh rực rỡ vào các
+                            buổi trong ngày.</p>
+                        <a href="#" class="btn btn-primary">Xem thêm</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 15rem; ">
+                    <img src="images/inside5.png" class="imgcard card-img-top" alt="nhà nghỉ">
+                    <div class="card-body">
+                        <h5 class="card-title">View trên không</h5>
+                        <p class="card-text">Nhìn mọi thứ nhỏ bé dưới chân theo góc nhìn của những ngồi nhà cao chót
+                            vót.</p>
+                        <a href="#" class="btn btn-primary">Xem thêm</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 15rem;">
+                    <img src="images/inside2.jpg" class="imgcard card-img-top" alt="Nội thất">
+                    <div class="card-body">
+                        <h5 class="card-title">Không gian rộng</h5>
+                        <p class="card-text">Không gian rộng rãi thoải mái,nội thất sang trọng, nhiều phòng, phù hợp với
+                            đi chơi nhiều người.</p>
+                        <a href="#" class="btn btn-primary">Xem thêm</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h2>
+            Nhà ở mà khách yêu thích
+        </h2>
+        <div class="form-row">
+            <div class="col">
+                <div class="card" style="width: 15rem; height: 406px;">
+                    <img src="/images/inside.jpg" class="imgcard card-img-top" alt="Nội thất">
+                    <div class="card-body">
+                        <h5 class="card-title">Nội thất xịn xò</h5>
+                        <p class="card-text">Tới đây,được thư giãn với bầu không khí trong lành mà dịu mát cùng với
+                            những bức hình selfie đẹp đẽ.</p>
+                        <a href="#" class="btn btn-primary">Xem thêm</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 15rem;" style="height:110rem">
+                    <img src="images/inside4.jpg" class="imgcard card-img-top" alt="Nội thất">
+                    <div class="card-body">
+                        <h5 class="card-title">View hướng biển</h5>
+                        <p class="card-text">Tận hưởng được mùi gió biển nồng nàn cùng với ánh bình minh rực rỡ vào các
+                            buổi trong ngày.</p>
+                        <a href="#" class="btn btn-primary">Xem thêm</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 15rem; ">
+                    <img src="images/inside5.png" class="imgcard card-img-top" alt="nhà nghỉ">
+                    <div class="card-body">
+                        <h5 class="card-title">View trên không</h5>
+                        <p class="card-text">Nhìn mọi thứ nhỏ bé dưới chân theo góc nhìn của những ngồi nhà cao chót
+                            vót.</p>
+                        <a href="#" class="btn btn-primary">Xem thêm</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 15rem;">
+                    <img src="images/inside2.jpg" class="imgcard card-img-top" alt="Nội thất">
+                    <div class="card-body">
+                        <h5 class="card-title">Không gian rộng</h5>
+                        <p class="card-text">Không gian rộng rãi thoải mái,nội thất sang trọng, nhiều phòng, phù hợp với
+                            đi chơi nhiều người.</p>
+                        <a href="#" class="btn btn-primary">Xem thêm</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!--constract us-->
+    <div class="container-fluid">
+        <div class="row text-center">
+            <div class="col-12">
+                <h1>Contact us</h1>
+            </div>
+            <div class="col-12 social">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!--footer-->
+    <footer>
+        <div class="container text-center">
+            <h2>
+                Tiết kiệm thời gian và tiền bạc!
+            </h2>
+            <p>
+                Hãy đăng ký và chúng tôi sẽ gửi những ưu đãi tốt nhất cho bạn
+            </p>
+            <form action="/action_page.php">
+                <div class="form-group">
+                    <div class="form-inline">
+                        <div id="email" class="form-row">
+                            <div class="col">
+                                <input type="email" class="form-control" placeholder="Địa chỉ email của bạn" id="email">
+                            </div>
+                            <div class="col">
+                                <button type="submit" class="btn btn-primary">Đăng ký</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox"> Gửi cho tôi thông báo thường xuyên.!
+                    </label>
+                </div>
+
+            </form>
+        </div>
+    </footer>
+<div class="container d-flex flex-row-reverse">
+    Bản quyền © 2020 thuộc về Booking
+</div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $("#datepicker").datepicker({
+                autoclose: true,
+                todayHighlight: true
+            }).datepicker('update', new Date());
+        });
+    </script>
+
+</body>
+
+</html>
